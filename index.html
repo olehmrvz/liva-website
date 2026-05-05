@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Impressum & Datenschutz | Liva Beauty Lounge</title>
+    <title>Rechtliches | Liva Beauty Lounge</title>
     <style>
         :root {
             --bg-color: #FBF9F6;
@@ -80,19 +80,38 @@
             margin: 30px 0;
         }
 
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+
+        th, td {
+            border: 1px solid var(--border-color);
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: rgba(140, 123, 101, 0.05);
+            font-weight: 600;
+        }
+
         /* Tab Navigation */
         .tabs {
             display: flex;
             justify-content: center;
-            gap: 15px;
+            flex-wrap: wrap;
+            gap: 10px;
             margin-bottom: 40px;
         }
 
         .tab-button {
             background: transparent;
             border: 1px solid var(--border-color);
-            padding: 12px 24px;
-            font-size: 0.9rem;
+            padding: 10px 20px;
+            font-size: 0.85rem;
             text-transform: uppercase;
             letter-spacing: 1px;
             color: var(--text-color);
@@ -114,7 +133,7 @@
         /* Content Sections */
         .content-section {
             display: none;
-            animation: fadeIn 0.5s ease;
+            animation: fadeIn 0.4s ease;
             background: #fff;
             padding: 40px;
             border-radius: 8px;
@@ -126,7 +145,7 @@
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
+            from { opacity: 0; transform: translateY(5px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
@@ -134,7 +153,7 @@
         @media (max-width: 600px) {
             .tabs {
                 flex-direction: column;
-                gap: 10px;
+                gap: 8px;
             }
             .content-section {
                 padding: 20px;
@@ -150,6 +169,7 @@
     <div class="tabs">
         <button class="tab-button active" onclick="switchTab('impressum')">Impressum</button>
         <button class="tab-button" onclick="switchTab('datenschutz')">Datenschutzerklärung</button>
+        <button class="tab-button" onclick="switchTab('agb')">AGB</button>
     </div>
 
     <!-- IMPRESSUM SECTION -->
@@ -165,7 +185,7 @@
         <h3>Kontakt</h3>
         <p><strong>Telefon:</strong> +49 155 6167 49 57<br>
         <strong>E-Mail:</strong> <a href="mailto:liva@aven-gruppe.de">liva@aven-gruppe.de</a><br>
-        <strong>Instagram:</strong> <a href="https://instagram.com/liva_beauty_lounge" target="_blank">@liva_beauty_lounge</a></p>
+        <strong>Instagram:</strong> <a href="https://instagram.com/liva_beauty_lounge" target="_blank">https://instagram.com/liva_beauty_lounge</a></p>
         
         <hr>
         
@@ -272,7 +292,7 @@
 
         <hr>
         <h3>10. Keine Cookies und kein Tracking</h3>
-        <p>Auf dieser Info-Seite setzen wir:</p>
+        <p>Auf dieser Info-Seite (Linktree / Mini-Site) setzen wir:</p>
         <ul>
             <li>keine Analyse- oder Tracking-Tools (wie Google Analytics)</li>
             <li>keine Werbe-Pixel</li>
@@ -294,6 +314,99 @@
         <p>Zudem haben Sie das Recht, sich bei einer zuständigen Datenschutz-Aufsichtsbehörde zu beschweren (Art. 77 DSGVO). Die für uns zuständige Aufsichtsbehörde ist:</p>
         <p><strong>Die Landesbeauftragte für den Datenschutz Niedersachsen</strong><br>Prinzenstraße 5, 30159 Hannover<br><a href="https://www.lfd.niedersachsen.de" target="_blank">www.lfd.niedersachsen.de</a></p>
     </div>
+
+    <!-- AGB SECTION -->
+    <div id="agb" class="content-section">
+        <h2>Allgemeine Geschäftsbedingungen (AGB)</h2>
+        <p><strong>Liva Beauty Lounge</strong><br>Inh. Liga Sare<br>Rote Reihe 42, 30827 Garbsen</p>
+        <p><em>Stand: Mai 2026</em></p>
+
+        <hr>
+
+        <h3>1. Geltungsbereich</h3>
+        <p>Diese Allgemeinen Geschäftsbedingungen (AGB) gelten für sämtliche Dienstleistungen und Behandlungen der Liva Beauty Lounge (nachfolgend „der Salon“) gegenüber Kunden. Mit der Terminbuchung — ob mündlich, telefonisch, per Instagram-Direct oder SMS — erkennt der Kunde diese AGB an.</p>
+        <p>Abweichende Regelungen des Kunden gelten nur, wenn sie vom Salon ausdrücklich schriftlich bestätigt wurden.</p>
+
+        <hr>
+
+        <h3>2. Terminvereinbarung</h3>
+        <p>Termine gelten nach Bestätigung durch den Salon als verbindlich vereinbart. Die Bestätigung kann mündlich, telefonisch oder schriftlich (Instagram-Direct, SMS) erfolgen.</p>
+        <p>Der Kunde ist verpflichtet, zum vereinbarten Zeitpunkt pünktlich zu erscheinen. Bei Verspätungen verkürzt sich die Behandlungszeit entsprechend; der Preis bleibt unverändert, sofern der Termin nicht vollständig ausfällt. Bei mehr als 15 Minuten Verspätung behält sich der Salon vor, den Termin als ausgefallen zu behandeln.</p>
+
+        <hr>
+
+        <h3>3. Stornierung und Nichterscheinen (No-Show)</h3>
+        <p>Eine kostenfreie Stornierung ist bis <strong>24 Stunden vor dem vereinbarten Termin</strong> möglich. Die Stornierung muss gegenüber dem Salon erklärt werden — telefonisch oder per Instagram-Direct/SMS.</p>
+        <p>Bei späterer Stornierung oder Nichterscheinen ohne Abmeldung (No-Show) ist der Salon berechtigt, folgende Ausfallhonorare zu berechnen:</p>
+        
+        <table>
+            <tr>
+                <th>Zeitpunkt</th>
+                <th>Ausfallhonorar</th>
+            </tr>
+            <tr>
+                <td>Stornierung weniger als 24 Std. vorher</td>
+                <td>50 % des Behandlungspreises</td>
+            </tr>
+            <tr>
+                <td>Nichterscheinen ohne Abmeldung (No-Show)</td>
+                <td>100 % des Behandlungspreises</td>
+            </tr>
+        </table>
+        
+        <p>Dem Kunden bleibt der Nachweis vorbehalten, dass dem Salon kein oder ein geringerer Schaden entstanden ist.</p>
+
+        <hr>
+
+        <h3>4. Preise und Zahlung</h3>
+        <p>Sämtliche Preise verstehen sich in Euro. Die jeweils aktuelle Preisliste ist im Salon ausgehängt und auf Anfrage einsehbar.</p>
+        <p>Die Zahlung erfolgt unmittelbar nach der Behandlung in bar, per EC-Karte (Girocard) oder per Überweisung. Andere Zahlungsmethoden nur nach vorheriger Vereinbarung.</p>
+        <p>Zahlungsverzug tritt ohne Mahnung ein, wenn der Kunde die Rechnung nicht innerhalb von 14 Tagen nach Erhalt begleicht.</p>
+
+        <hr>
+
+        <h3>5. Gewährleistung und Nachbesserung</h3>
+        <p>Die Behandlung wird fachgerecht nach dem aktuellen Stand der Friseurhandwerkskunst durchgeführt. Farb- und Stilergebnisse können je nach Haarbeschaffenheit und Vorschädigung individuell abweichen; ein bestimmtes Farbergebnis wird nur bei vorheriger Beratung und Probesträhne zugesichert.</p>
+        <p>Mängelrügen sind unverzüglich, spätestens jedoch innerhalb von <strong>7 Tagen</strong> nach der Behandlung, gegenüber dem Salon geltend zu machen. Der Salon ist berechtigt, innerhalb angemessener Frist nachzubessern. Erst nach zweimaligem Fehlschlagen der Nachbesserung kann der Kunde Minderung oder Rücktritt verlangen.</p>
+
+        <hr>
+
+        <h3>6. Haftung</h3>
+        <p>Der Salon haftet für Schäden — gleich aus welchem Rechtsgrund — nach den gesetzlichen Bestimmungen:</p>
+        <ul>
+            <li><strong>Unbeschränkt</strong> bei Vorsatz, grober Fahrlässigkeit, Verletzung von Leben/Körper/Gesundheit sowie nach dem Produkthaftungsgesetz.</li>
+            <li><strong>Beschränkt auf den vertragstypischen, vorhersehbaren Schaden</strong> bei einfacher Fahrlässigkeit in der Verletzung wesentlicher Vertragspflichten (Kardinalpflichten). Im Übrigen ist die Haftung bei einfacher Fahrlässigkeit ausgeschlossen.</li>
+        </ul>
+
+        <hr>
+
+        <h3>7. Mitgebrachte Gegenstände und Garderobe</h3>
+        <p>Für mitgebrachte Gegenstände, Kleidung und Wertgegenstände des Kunden übernimmt der Salon keine Haftung, es sei denn, der Schaden wurde durch grobe Fahrlässigkeit oder Vorsatz des Salons verursacht.</p>
+        <p>Der Salon empfiehlt, empfindliche oder wertvolle Kleidungsstücke vor der Behandlung abzulegen. Der Kunde erhält auf Wunsch einen Umhang.</p>
+
+        <hr>
+
+        <h3>8. Minderjährige</h3>
+        <p>Dienstleistungen an Minderjährigen unter 18 Jahren werden nur in Begleitung eines Erziehungsberechtigten oder mit dessen schriftlicher Einwilligung erbracht. Der Salon behält sich vor, bei Zweifeln am Alter einen Altersnachweis zu verlangen.</p>
+
+        <hr>
+
+        <h3>9. Hausrecht und Hygiene</h3>
+        <p>Das Betreten des Salons erfolgt auf eigene Gefahr. Der Salon übt das Hausrecht aus und ist berechtigt, Kunden den Zutritt zu verweigern oder sie des Salons zu verweisen, insbesondere bei:</p>
+        <ul>
+            <li>aggressivem oder beleidigendem Verhalten</li>
+            <li>erkennbar ansteckenden Erkrankungen</li>
+            <li>Missachtung von Hygieneanforderungen</li>
+        </ul>
+        <p>Von Kunden wird grundsätzlich erwartet, das Salonpersonal mit Respekt zu behandeln. Der Salon ist ein diskriminierungsfreier Ort — jegliche Form von Rassismus, Sexismus oder Belästigung führt zum sofortigen Hausverweis ohne Anspruch auf Rückerstattung.</p>
+
+        <hr>
+
+        <h3>10. Schlussbestimmungen</h3>
+        <p>Es gilt das Recht der Bundesrepublik Deutschland unter Ausschluss des UN-Kaufrechts.</p>
+        <p>Sollte eine Bestimmung dieser AGB unwirksam sein oder werden, bleibt die Wirksamkeit der übrigen Bestimmungen unberührt. Die unwirksame Bestimmung gilt als durch eine solche ersetzt, die dem wirtschaftlichen Zweck der unwirksamen Bestimmung am nächsten kommt (Salvatorische Klausel).</p>
+        <p>Gerichtsstand für alle Streitigkeiten aus dem Vertragsverhältnis ist — soweit gesetzlich zulässig — Hannover.</p>
+    </div>
 </div>
 
 <script>
@@ -303,7 +416,7 @@
         document.querySelectorAll('.content-section').forEach(sec => sec.classList.remove('active'));
         
         // Add active class to clicked button and target section
-        event.target.classList.add('active');
+        event.currentTarget.classList.add('active');
         document.getElementById(tabId).classList.add('active');
     }
 </script>
