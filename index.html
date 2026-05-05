@@ -4,231 +4,405 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rechtliches | Liva Beauty Lounge</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=DM+Serif+Display&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-color: #FBF9F6;
-            --text-color: #2C2A29;
-            --accent-color: #8C7B65;
-            --border-color: #E5E0D8;
+            --bg-primary: #FAF9F7;
+            --bg-card: #FFFFFF;
+            --text-primary: #1A1817;
+            --text-secondary: #6B6560;
+            --text-muted: #9B9590;
+            --accent: #8C7B65;
+            --accent-hover: #6E6252;
+            --accent-light: rgba(140, 123, 101, 0.08);
+            --accent-subtle: rgba(140, 123, 101, 0.04);
+            --border: rgba(140, 123, 101, 0.12);
+            --border-light: rgba(140, 123, 101, 0.06);
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.04);
+            --shadow-md: 0 4px 20px rgba(0,0,0,0.04);
+            --shadow-lg: 0 8px 40px rgba(0,0,0,0.06);
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 16px;
+            --radius-full: 50px;
+            --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-        }
-
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
-
-        /* Typography */
-        h1 {
-            font-family: "Georgia", serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+            font-size: 15px;
             font-weight: 400;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            min-height: 100vh;
+        }
+
+        .page-wrapper {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Header */
+        .header {
+            padding: 60px 20px 40px;
             text-align: center;
-            margin-bottom: 40px;
-            font-size: 2rem;
-            letter-spacing: 1px;
+            position: relative;
         }
 
-        h2 {
-            font-family: "Georgia", serif;
-            font-weight: 400;
-            font-size: 1.5rem;
-            margin-top: 40px;
-            margin-bottom: 15px;
-            color: var(--accent-color);
-        }
-
-        h3 {
-            font-weight: 600;
-            font-size: 1.1rem;
-            margin-top: 30px;
-            margin-bottom: 10px;
-        }
-
-        p, ul {
-            font-size: 0.95rem;
-            margin-bottom: 15px;
-        }
-
-        ul {
-            padding-left: 20px;
-        }
-
-        a {
-            color: var(--accent-color);
-            text-decoration: none;
-            border-bottom: 1px solid transparent;
-            transition: border-color 0.3s ease;
-        }
-
-        a:hover {
-            border-color: var(--accent-color);
-        }
-
-        hr {
-            border: 0;
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
             height: 1px;
-            background: var(--border-color);
-            margin: 30px 0;
+            background: var(--accent);
+            opacity: 0.4;
         }
 
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 20px;
-            font-size: 0.95rem;
+        .logo-text {
+            font-family: 'DM Serif Display', Georgia, serif;
+            font-size: clamp(1.8rem, 4vw, 2.4rem);
+            font-weight: 400;
+            letter-spacing: 0.02em;
+            color: var(--text-primary);
+            margin-bottom: 8px;
         }
 
-        th, td {
-            border: 1px solid var(--border-color);
-            padding: 10px;
-            text-align: left;
+        .header-subtitle {
+            font-size: 0.75rem;
+            font-weight: 500;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--text-muted);
         }
 
-        th {
-            background-color: rgba(140, 123, 101, 0.05);
-            font-weight: 600;
+        /* Container */
+        .container {
+            max-width: 780px;
+            margin: 0 auto;
+            padding: 40px 20px 80px;
+            flex: 1;
         }
 
-        /* Tab Navigation */
+        /* Tabs */
         .tabs {
             display: flex;
             justify-content: center;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-bottom: 40px;
+            gap: 6px;
+            margin-bottom: 32px;
+            padding: 4px;
+            background: var(--accent-subtle);
+            border-radius: var(--radius-full);
+            max-width: 480px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .tab-button {
-            background: transparent;
-            border: 1px solid var(--border-color);
-            padding: 10px 20px;
-            font-size: 0.85rem;
+            flex: 1;
+            padding: 10px 16px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 0.03em;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--text-color);
+            color: var(--text-secondary);
+            background: transparent;
+            border: none;
             cursor: pointer;
-            transition: all 0.3s ease;
-            border-radius: 4px;
+            transition: var(--transition);
+            border-radius: var(--radius-full);
+            white-space: nowrap;
+            font-family: inherit;
         }
 
         .tab-button:hover {
-            border-color: var(--accent-color);
+            color: var(--text-primary);
         }
 
         .tab-button.active {
-            background: var(--accent-color);
-            color: #fff;
-            border-color: var(--accent-color);
+            background: var(--bg-card);
+            color: var(--text-primary);
+            box-shadow: var(--shadow-sm);
         }
 
         /* Content Sections */
         .content-section {
             display: none;
-            animation: fadeIn 0.4s ease;
-            background: #fff;
-            padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+            background: var(--bg-card);
+            padding: clamp(28px, 5vw, 48px);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border-light);
+            animation: slideUp 0.45s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .content-section.active {
             display: block;
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(5px); }
-            to { opacity: 1; transform: translateY(0); }
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(12px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
-        /* Mobile adjustments */
+        /* Typography */
+        .section-title {
+            font-family: 'DM Serif Display', Georgia, serif;
+            font-size: 1.5rem;
+            font-weight: 400;
+            color: var(--text-primary);
+            margin-bottom: 32px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--border);
+            letter-spacing: 0.01em;
+        }
+
+        h3 {
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-top: 32px;
+            margin-bottom: 12px;
+        }
+
+        h3:first-of-type {
+            margin-top: 0;
+        }
+
+        p {
+            margin-bottom: 12px;
+            color: var(--text-secondary);
+            line-height: 1.75;
+        }
+
+        p:last-child {
+            margin-bottom: 0;
+        }
+
+        strong {
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+
+        ul {
+            padding-left: 20px;
+            margin-bottom: 12px;
+        }
+
+        li {
+            margin-bottom: 6px;
+            color: var(--text-secondary);
+            line-height: 1.75;
+        }
+
+        li::marker {
+            color: var(--accent);
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: var(--transition);
+        }
+
+        a:hover {
+            border-bottom-color: var(--accent);
+        }
+
+        hr {
+            border: none;
+            height: 1px;
+            background: var(--border-light);
+            margin: 24px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 16px;
+            font-size: 0.9rem;
+            border-radius: var(--radius-sm);
+            overflow: hidden;
+            border: 1px solid var(--border);
+        }
+
+        th, td {
+            padding: 12px 16px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        th {
+            background: var(--accent-subtle);
+            font-weight: 500;
+            font-size: 0.8rem;
+            letter-spacing: 0.03em;
+            text-transform: uppercase;
+            color: var(--text-secondary);
+        }
+
+        td {
+            color: var(--text-secondary);
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 32px 20px;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            letter-spacing: 0.05em;
+        }
+
+        .footer a {
+            color: var(--text-muted);
+        }
+
+        /* Mobile */
         @media (max-width: 600px) {
+            .header {
+                padding: 40px 20px 32px;
+            }
+
             .tabs {
                 flex-direction: column;
-                gap: 8px;
+                border-radius: var(--radius-md);
+                gap: 2px;
             }
+
+            .tab-button {
+                border-radius: var(--radius-sm);
+            }
+
             .content-section {
-                padding: 20px;
+                border-radius: var(--radius-md);
             }
+
+            .container {
+                padding: 24px 16px 60px;
+            }
+        }
+
+        /* Smooth scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--border);
+            border-radius: 3px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--accent);
         }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <h1>Liva Beauty Lounge</h1>
+<div class="page-wrapper">
 
+<header class="header">
+    <div class="logo-text">Liva Beauty Lounge</div>
+    <div class="header-subtitle">Rechtliche Hinweise</div>
+</header>
+
+<div class="container">
     <div class="tabs">
-        <button class="tab-button active" onclick="switchTab('impressum')">Impressum</button>
-        <button class="tab-button" onclick="switchTab('datenschutz')">Datenschutzerklärung</button>
-        <button class="tab-button" onclick="switchTab('agb')">AGB</button>
+        <button class="tab-button active" data-tab="impressum">Impressum</button>
+        <button class="tab-button" data-tab="datenschutz">Datenschutz</button>
+        <button class="tab-button" data-tab="agb">AGB</button>
     </div>
 
-    <!-- IMPRESSUM SECTION -->
+    <!-- IMPRESSUM -->
     <div id="impressum" class="content-section active">
-        <h2>Impressum</h2>
-        <h3>Angaben gemäß § 5 TMG / DDG (Digitale-Dienste-Gesetz)</h3>
+        <h2 class="section-title">Impressum</h2>
+
+        <h3>Angaben gemäß § 5 DDG</h3>
         <p><strong>Inhaberin und Diensteanbieterin i.S.d. § 5 DDG:</strong><br>Liga Sare</p>
         <p><strong>Betriebsleiterin:</strong><br>Leyla Kasso</p>
         <p><strong>Anschrift:</strong><br>Rote Reihe 42<br>30827 Garbsen<br>Deutschland</p>
-        
+
         <hr>
-        
+
         <h3>Kontakt</h3>
         <p><strong>Telefon:</strong> +49 155 6167 49 57<br>
         <strong>E-Mail:</strong> <a href="mailto:liva@aven-gruppe.de">liva@aven-gruppe.de</a><br>
-        <strong>Instagram:</strong> <a href="https://instagram.com/liva_beauty_lounge" target="_blank">https://instagram.com/liva_beauty_lounge</a></p>
-        
+        <strong>Instagram:</strong> <a href="https://instagram.com/liva_beauty_lounge" target="_blank" rel="noopener">@liva_beauty_lounge</a></p>
+
         <hr>
-        
+
         <h3>Berufsbezeichnung und berufsrechtliche Regelungen</h3>
         <p><strong>Berufsbezeichnung:</strong> Friseur (verliehen in der Bundesrepublik Deutschland)</p>
-        <p><strong>Zuständige Kammer:</strong><br>Handwerkskammer Hannover<br>Berliner Allee 17, 30175 Hannover<br><a href="https://www.hwk-hannover.de" target="_blank">www.hwk-hannover.de</a></p>
-        <p><strong>Berufsrechtliche Regelungen:</strong><br>Handwerksordnung (HwO)<br>Friseurverordnung (FrisV)<br>Abrufbar unter: <a href="https://www.gesetze-im-internet.de" target="_blank">www.gesetze-im-internet.de</a></p>
+        <p><strong>Zuständige Kammer:</strong><br>Handwerkskammer Hannover<br>Berliner Allee 17, 30175 Hannover<br><a href="https://www.hwk-hannover.de" target="_blank" rel="noopener">www.hwk-hannover.de</a></p>
+        <p><strong>Berufsrechtliche Regelungen:</strong><br>Handwerksordnung (HwO)<br>Friseurverordnung (FrisV)<br><a href="https://www.gesetze-im-internet.de" target="_blank" rel="noopener">www.gesetze-im-internet.de</a></p>
         <p><strong>Betriebs-Nr.:</strong> 0339388<br>
         <strong>Eintragungsdatum:</strong> 13.03.2026</p>
-        
+
         <hr>
-        
+
         <h3>Umsatzsteuer</h3>
-        <p>Umsatzsteuer-Identifikationsnummer gemäß § 27a UStG:<br>DE401076041</p>
-        
+        <p>Umsatzsteuer-Identifikationsnummer gemäß § 27a UStG:<br><strong>DE401076041</strong></p>
+
         <hr>
-        
+
         <h3>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h3>
         <p>Liga Sare<br>Rote Reihe 42<br>30827 Garbsen</p>
-        
+
         <hr>
-        
+
         <h3>Online-Streitbeilegung</h3>
-        <p>Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit:<br><a href="https://ec.europa.eu/consumers/odr/" target="_blank">https://ec.europa.eu/consumers/odr/</a></p>
+        <p>Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit:<br><a href="https://ec.europa.eu/consumers/odr/" target="_blank" rel="noopener">ec.europa.eu/consumers/odr</a></p>
         <p>Unsere E-Mail-Adresse: <a href="mailto:liva@aven-gruppe.de">liva@aven-gruppe.de</a></p>
         <p>Wir sind gemäß § 36 VSBG nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
     </div>
 
-    <!-- DATENSCHUTZ SECTION -->
+    <!-- DATENSCHUTZ -->
     <div id="datenschutz" class="content-section">
-        <h2>Datenschutzerklärung</h2>
-        <p><em>Stand: Mai 2026</em></p>
-        
+        <h2 class="section-title">Datenschutzerklärung</h2>
+        <p><em style="color: var(--text-muted); font-size: 0.85rem;">Stand: Mai 2026</em></p>
+
         <h3>1. Verantwortliche</h3>
         <p>Liga Sare<br>Rote Reihe 42<br>30827 Garbsen<br>Deutschland</p>
         <p>E-Mail: <a href="mailto:liva@aven-gruppe.de">liva@aven-gruppe.de</a><br>Telefon: +49 155 6167 49 57</p>
         <p>Ein Datenschutzbeauftragter ist nicht bestellt, da hierfür keine gesetzliche Verpflichtung besteht.</p>
-        
+
         <hr>
         <h3>2. Geltungsbereich</h3>
         <p>Diese Datenschutzerklärung gilt für die Verarbeitung personenbezogener Daten im Rahmen der Geschäftstätigkeit der Liva Beauty Lounge, insbesondere für die Kommunikation und Terminvereinbarung über unsere Social-Media-Profile (Instagram), per Telefon, SMS sowie für diese Mini-Website.</p>
         <p>Wir betreiben keinen eigenen komplexen Webshop und setzen auf dieser Info-Seite keine Tracking-Cookies ein.</p>
-        
+
         <hr>
         <h3>3. Art der verarbeiteten Daten</h3>
         <p>Im Rahmen der Terminvereinbarung und Kundenbetreuung verarbeiten wir folgende Daten:</p>
@@ -260,14 +434,14 @@
 
         <hr>
         <h3>6. Social-Media-Plattformen und Terminbuchung (Instagram)</h3>
-        <p>Unsere Terminbuchung und Kundenkommunikation erfolgt primär über die Plattform Instagram (Direct Messages, Profil: <a href="https://instagram.com/liva_beauty_lounge" target="_blank">https://instagram.com/liva_beauty_lounge</a>) sowie per Telefon.<br>
-        Instagram wird betrieben von der Meta Platforms Ireland Limited, 4 Grand Canal Square, Dublin 2, Irland.</p>
+        <p>Unsere Terminbuchung und Kundenkommunikation erfolgt primär über die Plattform Instagram (Direct Messages, Profil: <a href="https://instagram.com/liva_beauty_lounge" target="_blank" rel="noopener">@liva_beauty_lounge</a>) sowie per Telefon.</p>
+        <p>Instagram wird betrieben von der Meta Platforms Ireland Limited, 4 Grand Canal Square, Dublin 2, Irland.</p>
         <p><strong>Gemeinsame Verantwortlichkeit (Insights):</strong><br>
-        Soweit Meta uns für unser Instagram-Profil Seiten-Statistiken ("Insights") zur Verfügung stellt, sind wir mit Meta gemeinsam Verantwortliche (Art. 26 DSGVO). Die entsprechende Vereinbarung mit Meta (Page Insights Controller Addendum) finden Sie hier: <a href="https://www.facebook.com/legal/terms/page_controller_addendum" target="_blank">https://www.facebook.com/legal/terms/page_controller_addendum</a></p>
+        Soweit Meta uns für unser Instagram-Profil Seiten-Statistiken ("Insights") zur Verfügung stellt, sind wir mit Meta gemeinsam Verantwortliche (Art. 26 DSGVO). Die entsprechende Vereinbarung mit Meta (Page Insights Controller Addendum) finden Sie hier: <a href="https://www.facebook.com/legal/terms/page_controller_addendum" target="_blank" rel="noopener">Page Controller Addendum</a></p>
         <p><strong>Datenübermittlung in Drittländer (USA):</strong><br>
         Durch die Nutzung von Instagram können Daten an die Server der Meta Platforms Inc. in den USA übertragen werden. Meta ist nach dem "EU-US Data Privacy Framework" zertifiziert, was ein angemessenes Datenschutzniveau nach EU-Standards gewährleistet.</p>
         <p>Wenn Sie uns über Instagram kontaktieren (Direct Messages) oder anrufen, verarbeiten wir die von Ihnen freiwillig mitgeteilten Daten (z. B. Name, Wunschtermin, Telefonnummer) ausschließlich zur Terminorganisation und Durchführung der Dienstleistung.</p>
-        <p>Weitere Informationen zur Datenverarbeitung durch Instagram finden Sie in deren Datenschutzrichtlinie: <a href="https://privacycenter.instagram.com/policy" target="_blank">https://privacycenter.instagram.com/policy</a></p>
+        <p>Weitere Informationen zur Datenverarbeitung durch Instagram: <a href="https://privacycenter.instagram.com/policy" target="_blank" rel="noopener">Instagram Datenschutzrichtlinie</a></p>
 
         <hr>
         <h3>7. Kommunikation über SMS</h3>
@@ -300,11 +474,11 @@
         <p><strong>Auftragsverarbeitung (Art. 28 DSGVO):</strong><br>Mit Netlify besteht ein Vertrag zur Auftragsverarbeitung (Data Processing Agreement). Netlify verarbeitet Daten ausschließlich nach unseren Weisungen und hat geeignete technische und organisatorische Maßnahmen zum Schutz personenbezogener Daten getroffen.</p>
         <p><strong>Datenübermittlung in Drittländer (USA):</strong><br>Netlify, Inc. hat seinen Sitz in den USA und ist nach dem "EU-US Data Privacy Framework" zertifiziert, was ein angemessenes Datenschutzniveau nach EU-Standards gewährleistet.</p>
         <p><strong>Rechtsgrundlage:</strong><br>Die Verarbeitung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einer sicheren, stabilen und effizienten Bereitstellung unserer Website).</p>
-        <p>Weitere Informationen zum Datenschutz bei Netlify: <a href="https://www.netlify.com/gdpr/" target="_blank">https://www.netlify.com/gdpr/</a></p>
+        <p>Weitere Informationen zum Datenschutz bei Netlify: <a href="https://www.netlify.com/gdpr/" target="_blank" rel="noopener">netlify.com/gdpr</a></p>
 
         <hr>
         <h3>11. Keine Cookies und kein Tracking</h3>
-        <p>Auf dieser Info-Seite (Linktree / Mini-Site) setzen wir:</p>
+        <p>Auf dieser Info-Seite setzen wir:</p>
         <ul>
             <li>keine Analyse- oder Tracking-Tools (wie Google Analytics)</li>
             <li>keine Werbe-Pixel</li>
@@ -324,19 +498,19 @@
             <li><strong>Widerruf erteilter Einwilligungen (Art. 7 Abs. 3 DSGVO)</strong></li>
         </ul>
         <p>Zudem haben Sie das Recht, sich bei einer zuständigen Datenschutz-Aufsichtsbehörde zu beschweren (Art. 77 DSGVO). Die für uns zuständige Aufsichtsbehörde ist:</p>
-        <p><strong>Die Landesbeauftragte für den Datenschutz Niedersachsen</strong><br>Prinzenstraße 5, 30159 Hannover<br><a href="https://www.lfd.niedersachsen.de" target="_blank">www.lfd.niedersachsen.de</a></p>
+        <p><strong>Die Landesbeauftragte für den Datenschutz Niedersachsen</strong><br>Prinzenstraße 5, 30159 Hannover<br><a href="https://www.lfd.niedersachsen.de" target="_blank" rel="noopener">www.lfd.niedersachsen.de</a></p>
     </div>
 
-    <!-- AGB SECTION -->
+    <!-- AGB -->
     <div id="agb" class="content-section">
-        <h2>Allgemeine Geschäftsbedingungen (AGB)</h2>
-        <p><strong>Liva Beauty Lounge</strong><br>Inh. Liga Sare<br>Rote Reihe 42, 30827 Garbsen</p>
-        <p><em>Stand: Mai 2026</em></p>
+        <h2 class="section-title">Allgemeine Geschäftsbedingungen</h2>
+        <p><strong>Liva Beauty Lounge</strong><br>Inh. Liga Sare · Rote Reihe 42, 30827 Garbsen</p>
+        <p><em style="color: var(--text-muted); font-size: 0.85rem;">Stand: Mai 2026</em></p>
 
         <hr>
 
         <h3>1. Geltungsbereich</h3>
-        <p>Diese Allgemeinen Geschäftsbedingungen (AGB) gelten für sämtliche Dienstleistungen und Behandlungen der Liva Beauty Lounge (nachfolgend „der Salon“) gegenüber Kunden. Mit der Terminbuchung — ob mündlich, telefonisch, per Instagram-Direct oder SMS — erkennt der Kunde diese AGB an.</p>
+        <p>Diese Allgemeinen Geschäftsbedingungen (AGB) gelten für sämtliche Dienstleistungen und Behandlungen der Liva Beauty Lounge (nachfolgend „der Salon") gegenüber Kunden. Mit der Terminbuchung — ob mündlich, telefonisch, per Instagram-Direct oder SMS — erkennt der Kunde diese AGB an.</p>
         <p>Abweichende Regelungen des Kunden gelten nur, wenn sie vom Salon ausdrücklich schriftlich bestätigt wurden.</p>
 
         <hr>
@@ -347,10 +521,10 @@
 
         <hr>
 
-        <h3>3. Stornierung und Nichterscheinen (No-Show)</h3>
+        <h3>3. Stornierung und Nichterscheinen</h3>
         <p>Eine kostenfreie Stornierung ist bis <strong>24 Stunden vor dem vereinbarten Termin</strong> möglich. Die Stornierung muss gegenüber dem Salon erklärt werden — telefonisch oder per Instagram-Direct/SMS.</p>
-        <p>Bei späterer Stornierung oder Nichterscheinen ohne Abmeldung (No-Show) ist der Salon berechtigt, folgende Ausfallhonorare zu berechnen:</p>
-        
+        <p>Bei späterer Stornierung oder Nichterscheinen ohne Abmeldung ist der Salon berechtigt, folgende Ausfallhonorare zu berechnen:</p>
+
         <table>
             <tr>
                 <th>Zeitpunkt</th>
@@ -365,7 +539,7 @@
                 <td>100 % des Behandlungspreises</td>
             </tr>
         </table>
-        
+
         <p>Dem Kunden bleibt der Nachweis vorbehalten, dass dem Salon kein oder ein geringerer Schaden entstanden ist.</p>
 
         <hr>
@@ -387,12 +561,12 @@
         <p>Der Salon haftet für Schäden — gleich aus welchem Rechtsgrund — nach den gesetzlichen Bestimmungen:</p>
         <ul>
             <li><strong>Unbeschränkt</strong> bei Vorsatz, grober Fahrlässigkeit, Verletzung von Leben/Körper/Gesundheit sowie nach dem Produkthaftungsgesetz.</li>
-            <li><strong>Beschränkt auf den vertragstypischen, vorhersehbaren Schaden</strong> bei einfacher Fahrlässigkeit in der Verletzung wesentlicher Vertragspflichten (Kardinalpflichten). Im Übrigen ist die Haftung bei einfacher Fahrlässigkeit ausgeschlossen.</li>
+            <li><strong>Beschränkt</strong> auf den vertragstypischen, vorhersehbaren Schaden bei einfacher Fahrlässigkeit in der Verletzung wesentlicher Vertragspflichten. Im Übrigen ist die Haftung bei einfacher Fahrlässigkeit ausgeschlossen.</li>
         </ul>
 
         <hr>
 
-        <h3>7. Mitgebrachte Gegenstände und Garderobe</h3>
+        <h3>7. Mitgebrachte Gegenstände</h3>
         <p>Für mitgebrachte Gegenstände, Kleidung und Wertgegenstände des Kunden übernimmt der Salon keine Haftung, es sei denn, der Schaden wurde durch grobe Fahrlässigkeit oder Vorsatz des Salons verursacht.</p>
         <p>Der Salon empfiehlt, empfindliche oder wertvolle Kleidungsstücke vor der Behandlung abzulegen. Der Kunde erhält auf Wunsch einen Umhang.</p>
 
@@ -404,33 +578,41 @@
         <hr>
 
         <h3>9. Hausrecht und Hygiene</h3>
-        <p>Das Betreten des Salons erfolgt auf eigene Gefahr. Der Salon übt das Hausrecht aus und ist berechtigt, Kunden den Zutritt zu verweigern oder sie des Salons zu verweisen, insbesondere bei:</p>
+        <p>Der Salon übt das Hausrecht aus und ist berechtigt, Kunden den Zutritt zu verweigern oder sie des Salons zu verweisen, insbesondere bei:</p>
         <ul>
             <li>aggressivem oder beleidigendem Verhalten</li>
             <li>erkennbar ansteckenden Erkrankungen</li>
             <li>Missachtung von Hygieneanforderungen</li>
         </ul>
-        <p>Von Kunden wird grundsätzlich erwartet, das Salonpersonal mit Respekt zu behandeln. Der Salon ist ein diskriminierungsfreier Ort — jegliche Form von Rassismus, Sexismus oder Belästigung führt zum sofortigen Hausverweis ohne Anspruch auf Rückerstattung.</p>
+        <p>Der Salon ist ein diskriminierungsfreier Ort — jegliche Form von Rassismus, Sexismus oder Belästigung führt zum sofortigen Hausverweis ohne Anspruch auf Rückerstattung.</p>
 
         <hr>
 
         <h3>10. Schlussbestimmungen</h3>
         <p>Es gilt das Recht der Bundesrepublik Deutschland unter Ausschluss des UN-Kaufrechts.</p>
-        <p>Sollte eine Bestimmung dieser AGB unwirksam sein oder werden, bleibt die Wirksamkeit der übrigen Bestimmungen unberührt. Die unwirksame Bestimmung gilt als durch eine solche ersetzt, die dem wirtschaftlichen Zweck der unwirksamen Bestimmung am nächsten kommt (Salvatorische Klausel).</p>
-        <p>Gerichtsstand für alle Streitigkeiten aus dem Vertragsverhältnis ist — soweit gesetzlich zulässig — Hannover.</p>
+        <p>Sollte eine Bestimmung dieser AGB unwirksam sein oder werden, bleibt die Wirksamkeit der übrigen Bestimmungen unberührt (Salvatorische Klausel).</p>
+        <p>Gerichtsstand — soweit gesetzlich zulässig — Hannover.</p>
     </div>
 </div>
 
+<footer class="footer">
+    &copy; 2026 Liva Beauty Lounge
+</footer>
+
+</div>
+
 <script>
-    function switchTab(tabId) {
-        // Remove active class from all buttons and sections
-        document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
-        document.querySelectorAll('.content-section').forEach(sec => sec.classList.remove('active'));
-        
-        // Add active class to clicked button and target section
-        event.currentTarget.classList.add('active');
-        document.getElementById(tabId).classList.add('active');
-    }
+    document.querySelectorAll('.tab-button').forEach(button => {
+        button.addEventListener('click', () => {
+            const tabId = button.dataset.tab;
+
+            document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.content-section').forEach(sec => sec.classList.remove('active'));
+
+            button.classList.add('active');
+            document.getElementById(tabId).classList.add('active');
+        });
+    });
 </script>
 
 </body>
